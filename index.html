@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criptografia de Senha</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔐 Criptografia de Senha</h1>
+            <p class="subtitle">Criptografe e descriptografe senhas com segurança</p>
+        </header>
+
+        <main>
+            <!-- Seção de Entrada -->
+            <section class="section input-section">
+                <h2>Entrada de Dados</h2>
+                <div class="input-group">
+                    <label for="password">Digite sua senha:</label>
+                    <input 
+                        type="password" 
+                        id="password" 
+                        placeholder="Digite uma senha..."
+                        class="input-field"
+                    >
+                    <button id="togglePassword" class="toggle-btn">👁️ Mostrar</button>
+                </div>
+
+                <div class="buttons-group">
+                    <button id="encryptBtn" class="btn btn-encrypt">🔒 Criptografar</button>
+                    <button id="clearBtn" class="btn btn-clear">🗑️ Limpar</button>
+                </div>
+            </section>
+
+            <!-- Seção de Saída -->
+            <section class="section output-section">
+                <h2>Resultado da Criptografia</h2>
+                
+                <div class="output-group">
+                    <label>Senha Criptografada:</label>
+                    <div class="output-box">
+                        <p id="encryptedOutput" class="output-text">Nenhuma senha criptografada ainda...</p>
+                        <button id="copyEncryptedBtn" class="copy-btn" style="display:none;">📋 Copiar</button>
+                    </div>
+                </div>
+
+                <div class="output-group">
+                    <label for="decryptedKey">Chave de Descriptografia (Necessária para descriptografar):</label>
+                    <div class="output-box">
+                        <p id="decryptionKey" class="output-text">Será gerada automaticamente...</p>
+                        <button id="copyKeyBtn" class="copy-btn" style="display:none;">📋 Copiar</button>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="decryptKey">Cole a chave aqui para descriptografar:</label>
+                    <input 
+                        type="text" 
+                        id="decryptKey" 
+                        placeholder="Cole a chave de descriptografia..."
+                        class="input-field"
+                    >
+                </div>
+
+                <button id="decryptBtn" class="btn btn-decrypt">🔓 Descriptografar</button>
+
+                <div class="output-group">
+                    <label>Senha Descriptografada:</label>
+                    <div class="output-box">
+                        <p id="decryptedOutput" class="output-text">Nenhuma senha descriptografada ainda...</p>
+                        <button id="copyDecryptedBtn" class="copy-btn" style="display:none;">📋 Copiar</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Seção de Explicação -->
+            <section class="section explanation-section">
+                <h2>📚 Como Funciona a Criptografia?</h2>
+                
+                <div class="explanation-content">
+                    <div class="explanation-item">
+                        <h3>🔑 O que é Criptografia?</h3>
+                        <p>
+                            Criptografia é o processo de transformar informações legíveis em um formato ilegível 
+                            usando algoritmos matemáticos. Apenas quem possui a chave correta consegue descriptografar 
+                            e ler a mensagem original.
+                        </p>
+                    </div>
+
+                    <div class="explanation-item">
+                        <h3>🔄 Como Este Site Funciona?</h3>
+                        <p>
+                            Este site utiliza o <strong>algoritmo CryptoJS com AES (Advanced Encryption Standard)</strong>, 
+                            um dos mais seguros para criptografia de dados. O processo funciona assim:
+                        </p>
+                        <ol>
+                            <li><strong>Criptografia:</strong> Você digita uma senha → Uma chave secreta é gerada → A senha é criptografada com essa chave</li>
+                            <li><strong>Chave:</strong> Uma chave única é criada (necessária para descriptografar)</li>
+                            <li><strong>Descriptografia:</strong> Você cola a chave → A senha é descriptografada e exibida</li>
+                        </ol>
+                    </div>
+
+                    <div class="explanation-item">
+                        <h3>⚙️ Tecnologias Utilizadas</h3>
+                        <p>
+                            <strong>CryptoJS:</strong> Biblioteca JavaScript que implementa algoritmos criptográficos 
+                            seguindo padrões internacionais.
+                        </p>
+                        <p>
+                            <strong>AES (Advanced Encryption Standard):</strong> Algoritmo de criptografia simétrica 
+                            aprovado pelo NIST (Instituto Nacional de Padrões e Tecnologia).
+                        </p>
+                    </div>
+
+                    <div class="explanation-item">
+                        <h3>🛡️ Segurança</h3>
+                        <p>
+                            ⚠️ <strong>Importante:</strong> Este site é apenas para fins educacionais. Para dados realmente sensíveis, 
+                            recomenda-se usar soluções profissionais de criptografia e gerenciadores de senha certificados.
+                        </p>
+                        <p>
+                            Os dados são processados <strong>apenas no seu navegador</strong> e não são enviados para nenhum servidor.
+                        </p>
+                    </div>
+
+                    <div class="explanation-item">
+                        <h3>💡 Exemplo de Uso</h3>
+                        <div class="example-box">
+                            <p><strong>Passo 1:</strong> Digite a senha: <code>MinhaS3nh@Forte</code></p>
+                            <p><strong>Passo 2:</strong> Clique em "Criptografar"</p>
+                            <p><strong>Passo 3:</strong> Resultado: <code>U2FsdGVkX1+jK2h5pL8qM9nN2oO3pQ4r5sT6uV7wX8yZ9aA0bB1cC2dD3e...</code></p>
+                            <p><strong>Passo 4:</strong> Para descriptografar, cole a chave fornecida e clique em "Descriptografar"</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>🔐 Ferramenta de Criptografia - Educacional</p>
+            <p>Processamento realizado no navegador • Dados não armazenados</p>
+        </footer>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
